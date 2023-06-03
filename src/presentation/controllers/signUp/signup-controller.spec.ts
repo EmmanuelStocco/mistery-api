@@ -53,4 +53,15 @@ describe('SignUp Controller', () => {
     const httpReponse = await sut.handle(makeFakeRequest())
     expect(httpReponse).toEqual(serverError(new Error(null)))
   })
+
+  test('Shoul call AddAcount with correct values', async () => {
+    const { sut, addAccountStub } = makeSut()
+    const addpSpy = jest.spyOn(addAccountStub, 'add')
+    await sut.handle(makeFakeRequest())
+    expect(addpSpy).toHaveBeenCalledWith({
+      name: 'any_name',
+      email: 'any_emai@mail.com',
+      password: 'any_password'
+    })
+  })
 })

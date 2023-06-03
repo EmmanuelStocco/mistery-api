@@ -1,4 +1,4 @@
-import { type AddAccount } from '../../../domain/usecases/add-account.use-case'
+import { type AddAccount } from '@/domain/usecases/add-account.use-case'
 import {
   serverError,
   type Controller,

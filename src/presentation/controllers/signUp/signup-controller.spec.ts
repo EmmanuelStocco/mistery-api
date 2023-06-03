@@ -1,7 +1,8 @@
-import { type AccountModel } from '../../../domain/models/account'
-import { type AddAccount, type AddAccountModel } from '../../../domain/usecases/add-account.use-case'
-import { SignUpController } from './signup-controller'
+import { type AccountModel } from '@/domain/models/account'
+import { type AddAccount, type AddAccountModel } from '@/domain/usecases/add-account.use-case'
 import { serverError } from './signup-controller.protocols'
+import { SignUpController } from './signup-controller'
+
 const makeFakeRequest = (): any => ({
   body: {
     name: 'any_name',

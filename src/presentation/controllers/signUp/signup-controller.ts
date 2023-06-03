@@ -3,8 +3,8 @@ import {
   serverError,
   type Controller,
   type HttpRequest,
-  type HttpResponse
-  // ok
+  type HttpResponse,
+  ok
 } from './signup-controller.protocols'
 
 export class SignUpController implements Controller {
@@ -13,12 +13,12 @@ export class SignUpController implements Controller {
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const { name, email, password } = httpRequest.body
-      await this.addAccount.add({
+      const account = await this.addAccount.add({
         name,
         email,
         password
       })
-      return new Promise(resolve => resolve(null))// ok({ account })
+      return ok({ account })
     } catch (error) {
       return serverError(error)
     }

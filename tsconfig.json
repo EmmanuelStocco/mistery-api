@@ -8,7 +8,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     // "rootDir": "src"
-  },
+  }
   // "include": [
   //   "src"
   // ],

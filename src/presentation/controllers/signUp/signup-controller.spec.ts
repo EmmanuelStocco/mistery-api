@@ -64,4 +64,13 @@ describe('SignUp Controller', () => {
       password: 'any_password'
     })
   })
+
+  test('Shoul return 200 if valid data is provided', async () => {
+    const { sut } = makeSut()
+    const httpReponse = await sut.handle(makeFakeRequest())
+    expect(httpReponse.statusCode).toBe(200)
+    console.log(httpReponse)
+    expect(httpReponse.statusCode).toBe(200)
+    expect(httpReponse.body).toEqual({ account: makeFakeAccount() })
+  })
 })

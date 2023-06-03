@@ -4,6 +4,7 @@ import {
   type Controller,
   type HttpRequest,
   type HttpResponse
+  // ok
 } from './signup-controller.protocols'
 
 export class SignUpController implements Controller {
@@ -17,7 +18,7 @@ export class SignUpController implements Controller {
         email,
         password
       })
-      return new Promise(() => (null))
+      return new Promise(resolve => resolve(null))// ok({ account })
     } catch (error) {
       return serverError(error)
     }

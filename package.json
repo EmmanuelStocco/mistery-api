@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/supertest": "^2.0.12",
     "@types/jest": "^29.5.1",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "eslint": "^8.39.0",
@@ -35,7 +36,8 @@
     "supertest": "^6.3.3",
     "jest": "^29.5.0",
     "husky": "^8.0.3",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {}
 }

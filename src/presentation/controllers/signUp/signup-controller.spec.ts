@@ -1,7 +1,7 @@
 import { type AccountModel } from '../../../domain/models/account'
 import { type AddAccount, type AddAccountModel } from '../../../domain/usecases/add-account.use-case'
 import { SignUpController } from './signup-controller'
-
+import { serverError } from './signup-controller.protocols'
 const makeFakeRequest = (): any => ({
   body: {
     name: 'any_name',
@@ -50,6 +50,6 @@ describe('SignUp Controller', () => {
     })
 
     const httpReponse = await sut.handle(makeFakeRequest())
-    expect(httpReponse).toEqual(new Error())
+    expect(httpReponse).toEqual(serverError(new Error(null)))
   })
 })
